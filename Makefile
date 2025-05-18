@@ -7,6 +7,13 @@ all:
 
 cpu:
 	python setupCPU.py build_ext --inplace
+
+mac:
+	brew install fftw libomp
+	brew install gcc
+	brew install clang
+	python setupCPU_macos.py build_ext --inplace
+
 fftw:
 	wget http://fftw.org/fftw-$(FFTW_VERSION).tar.gz
 	tar -xvf fftw-$(FFTW_VERSION).tar.gz
